@@ -1,0 +1,160 @@
+/* ----------------------------- */
+/* ==layout and modules          */
+/* ----------------------------- */
+
+/* module, gains superpower "BFC" Block Formating Context */
+.#{$kna-namespace}mod {
+	overflow: hidden;
+}
+
+/* blocks that needs to be placed under floats */
+.#{$kna-namespace}clear,
+.#{$kna-namespace}line,
+.#{$kna-namespace}row {
+	clear: both;
+}
+
+/* blocks that must contain floats */
+.#{$kna-namespace}clearfix,
+.#{$kna-namespace}line {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+		border-collapse: collapse;
+	}
+}
+
+/* simple blocks alignment */
+.#{$kna-namespace}left {
+	margin-right: auto;
+}
+
+.#{$kna-namespace}right {
+	margin-left: auto;
+}
+
+.#{$kna-namespace}center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* text and contents alignment */
+.#{$kna-namespace}txtleft {
+	text-align: left;
+}
+
+.#{$kna-namespace}txtright {
+	text-align: right;
+}
+
+.#{$kna-namespace}txtcenter {
+	text-align: center;
+}
+
+/* floating elements */
+.#{$kna-namespace}fl {
+	float: left;
+}
+
+img.#{$kna-namespace}fl {
+	margin-right: $small-value;
+}
+
+.#{$kna-namespace}fr {
+	float: right;
+}
+
+img.#{$kna-namespace}fr {
+	margin-left: $small-value;
+}
+
+img.#{$kna-namespace}fl,
+img.#{$kna-namespace}fr {
+	margin-bottom: $tiny-value;
+}
+
+/* table layout */
+.#{$kna-namespace}row {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.#{$kna-namespace}row > *,
+.#{$kna-namespace}col {
+	display: table-cell;
+	vertical-align: top;
+}
+
+/* no table-cell for script tag when body is a .row */
+body > script {
+	display: none !important;
+}
+
+/* inline-block */
+.#{$kna-namespace}inbl {
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* flexbox layout
+http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html
+*/
+
+[class*="#{$kna-namespace}flex-container"] {
+	// add extension for all browser
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.#{$kna-namespace}flex-container-h {
+	-moz-flex-direction: row;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+}
+
+.#{$kna-namespace}flex-container-v {
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+}
+
+.#{$kna-namespace}flex-item-fluid {
+	-moz-flex: 1;
+	-ms-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+}
+
+.#{$kna-namespace}flex-item-first {
+	-moz-order : -1;
+	-ms-order : -1;
+	-webkit-order : -1;
+	order : -1;
+}
+
+.#{$kna-namespace}flex-item-medium {
+	-moz-order : 0;
+	-ms-order : 0;
+	-webkit-order : 0;
+	order : 0;
+}
+
+.#{$kna-namespace}flex-item-last {
+	-moz-order : 1;
+	-ms-order : 1;
+	-webkit-order : 1;
+	order : 1;
+}
+
+.#{$kna-namespace}flex-item-center {
+	margin: auto;
+}

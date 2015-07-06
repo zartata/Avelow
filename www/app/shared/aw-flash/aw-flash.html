@@ -1,0 +1,10 @@
+<div class="flash-multiple-container">
+
+    <div class="flex-container-h tiny-man mts" ng-repeat="message in messages" ng-class="message.type">
+        <div class="flash-close w10 flex-item-last flex-container-v" ng-click="remove(message.id)">
+            <div class="flex-item-center">X</div>
+        </div>
+        <div class="pas flex-item-fluid txtcenter">{{message.message}}</div>
+    </div>
+
+</div>

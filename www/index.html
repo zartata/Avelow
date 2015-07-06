@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="avelowMain">
+    <head>
+        <!-- En-tête de la page -->
+        <meta charset="utf-8" />
+        <title>Avelow</title>
+        <link rel="stylesheet"  media="screen"  type="text/css"  href="assets/css/knacss.css" />
+        <link rel="stylesheet"  media="screen"  type="text/css"  href="/assets/css/aw-flash.css" />
+        <base href="/">
+    </head>
+
+    <body>
+        <div awd-flash></div>
+        <ng-view></ng-view>
+
+        <!-- Angularjs -->
+        <script src="assets/lib/angular.min.js"></script>
+        <script src="assets/lib/angular-route.min.js"></script>
+        <script src="assets/lib/angular-cookies.min.js"></script>
+
+        <!-- Securité mot de passe -->
+        <script src="assets/lib/hmac-sha256.js"></script>
+        <script src="assets/lib/sha256.js"></script>
+
+        <!-- Lib -->
+        <script src="assets/lib/underscore-min.js"></script>
+
+        <!-- application -->
+        <script src="app/shared/aw-flash/aw-flash.js"></script>
+        <script src="app/shared/avelow/avelow.js"></script>
+
+        <script src="app/app.js"></script>
+
+</body>
+</html>

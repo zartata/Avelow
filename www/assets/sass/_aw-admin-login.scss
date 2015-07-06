@@ -1,0 +1,22 @@
+@import "compass/css3";
+
+.admin-txt{
+    font-size: 2rem;
+    text-align: right;
+}
+
+.admin-presentation{
+    font-size: 3rem;
+    margin: auto;
+    text-align: center;
+}
+
+.admin-input{
+    @media (max-width: $tiny-screen) {
+        width: 100%;
+    }
+
+    @media (min-width: ($tiny-screen + 1)) {
+        width: 50%;
+    }
+}

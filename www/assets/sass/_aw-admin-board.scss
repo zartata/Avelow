@@ -1,0 +1,19 @@
+.admin-table-container{
+    @media (max-width: $tiny-screen) {
+        width: 100%;
+        margin-bottom: $large-value;
+    }
+
+    @media (min-width: ($tiny-screen + 1)) {
+        border-right: solid 1px black;
+        width: 30%;
+    }
+}
+
+.selected{
+    color: red;
+}
+
+.lbl{
+    font-size: 2rem;
+}

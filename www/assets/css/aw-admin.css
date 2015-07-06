@@ -1,0 +1,54 @@
+/*!
+* www.KNACSS.com V4.2.1 (25 mai 2015) @author: Raphael Goetter, Alsacreations
+* Licence WTFPL http://www.wtfpl.net/
+*/
+/* line 3, ../sass/_aw-admin-login.scss */
+.admin-txt {
+  font-size: 2rem;
+  text-align: right;
+}
+
+/* line 8, ../sass/_aw-admin-login.scss */
+.admin-presentation {
+  font-size: 3rem;
+  margin: auto;
+  text-align: center;
+}
+
+@media (max-width: 550px) {
+  /* line 14, ../sass/_aw-admin-login.scss */
+  .admin-input {
+    width: 100%;
+  }
+}
+@media (min-width: 551px) {
+  /* line 14, ../sass/_aw-admin-login.scss */
+  .admin-input {
+    width: 50%;
+  }
+}
+
+@media (max-width: 550px) {
+  /* line 1, ../sass/_aw-admin-board.scss */
+  .admin-table-container {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 551px) {
+  /* line 1, ../sass/_aw-admin-board.scss */
+  .admin-table-container {
+    border-right: solid 1px black;
+    width: 30%;
+  }
+}
+
+/* line 13, ../sass/_aw-admin-board.scss */
+.selected {
+  color: red;
+}
+
+/* line 17, ../sass/_aw-admin-board.scss */
+.lbl {
+  font-size: 2rem;
+}

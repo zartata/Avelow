@@ -1,0 +1,37 @@
+@import "_00-config.scss";
+
+$error: #c0392b;
+$success: #27ae60;
+$warning: #d35400;
+$help: #2980b9;
+
+// Transformer en mixin qui demande une couleur et passer la couleur suivant le type
+// Ajout de type simplifié
+
+.flash-multiple-container{
+    position: absolute;
+    @media (max-width: $tiny-screen) {
+        width: 100%;
+    }
+
+    @media (min-width: ($tiny-screen + 1)) {
+        width: 50%;
+        left: 25%;
+        top: 15px;
+    }
+}
+
+@mixin flash($color){
+    background-color: $color;
+    color: lighten($color, 33%);
+
+    .flash-close{
+        border-left: 2px solid lighten($color, 33%);
+        cursor: pointer;
+    }
+}
+
+.success{ @include flash($success);}
+.warning{ @include flash($warning);}
+.error{ @include flash($error);}
+.help{ @include flash($help);}

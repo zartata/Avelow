@@ -1,0 +1,66 @@
+<!-- AveLow / deco -->
+
+<header class="flex-container-h">
+    <div class="tiny-man mll w30"><img src="/assets/img/black-bike.png" alt="AveLow"></div>
+    <div class="tiny-man mrl w50 right flex-container-v">
+        <div class="flex-item-center w90 admin-txt"><awd-logout></awd-logout> - <a href="/admin/add-doc">Ajouter doc</a> - Admin Board</div>
+    </div>
+</header>
+
+<!-- Liste Table -->
+<section class="flex-container">
+
+    <div class="flex-container-v admin-table-container">
+        <h1 class="txtcenter">Tables en BDD</h1>
+
+        <div class="w100 mts admin-table txtcenter" ng-class="{selected: selected.table == table}" ng-repeat="table in tables" ng-click="updateOnTable(table)">
+            {{ table.name }}
+        </div>
+
+    </div>
+
+
+    <div ng-show="isSelectedTable()" class="flex-container-v w70 tiny-w100">
+        <h1 class="center txtcenter">Information de la table <span class="selected">{{selected.table.name}}</span></h1>
+
+        <div class="flex-container mas">
+
+            <div class="flex-container-v mrl tiny-man">
+                <div class="flex-container-v">
+                    <div class="flex-item-center"><span class="lbl">Nom :</span> {{selected.table.name}}</div>
+                </div>
+                <div class="flex-container-v">
+                    <div class="flex-item-center"><span class="lbl">Entité liée :</span> {{selected.table.entity}}</div>
+                </div>
+            </div>
+
+            <div class="flex-container">
+                <div class="flex-container-v">
+                    <div class="flex-item-center lbl">Champs :</div>
+                </div>
+                <div class="flex-container-v mls" ng-repeat="field in selected.table.fields">
+                    <div class="flex-item-center"> {{field}}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-show="isSelectedEntity()" class="flex-container-v admin-table-container">
+        <h1 class="center txtcenter">Information de l'entitée selectionnée</h1>
+
+        <div class="w100 mts txtcenter" ng-class="{selected: selected.table == table}" ng-repeat="field in selected.table.fields">
+            <span class="lbl">{{field}} :</span> {{selected.entity[field]}}
+        </div>
+    </div>
+
+    <div class="flex-container-v right w70 tiny-w100">
+        <h1 class="center txtcenter">Toutes les entitées en BDD</h1>
+
+        <div class="flex-container-h mas" ng-repeat="ent in entities" ng-click="updateOnEntity(ent)">
+            <div ng-repeat="field in selected.table.fields" ng-class="{selected: selected.entity == ent}" class="mls">
+                <span class="lbl">{{field}} :</span> {{ent[field]}}
+            </div>
+        </div>
+    </div>
+</section>

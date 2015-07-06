@@ -1,0 +1,66 @@
+/*!
+* www.KNACSS.com V4.2.1 (25 mai 2015) @author: Raphael Goetter, Alsacreations
+* Licence WTFPL http://www.wtfpl.net/
+*/
+/* line 11, ../sass/aw-flash.scss */
+.flash-multiple-container {
+  position: absolute;
+}
+@media (max-width: 550px) {
+  /* line 11, ../sass/aw-flash.scss */
+  .flash-multiple-container {
+    width: 100%;
+  }
+}
+@media (min-width: 551px) {
+  /* line 11, ../sass/aw-flash.scss */
+  .flash-multiple-container {
+    width: 50%;
+    left: 25%;
+    top: 15px;
+  }
+}
+
+/* line 34, ../sass/aw-flash.scss */
+.success {
+  background-color: #27ae60;
+  color: #96e7b8;
+}
+/* line 28, ../sass/aw-flash.scss */
+.success .flash-close {
+  border-left: 2px solid #96e7b8;
+  cursor: pointer;
+}
+
+/* line 35, ../sass/aw-flash.scss */
+.warning {
+  background-color: #d35400;
+  color: #ffb07c;
+}
+/* line 28, ../sass/aw-flash.scss */
+.warning .flash-close {
+  border-left: 2px solid #ffb07c;
+  cursor: pointer;
+}
+
+/* line 36, ../sass/aw-flash.scss */
+.error {
+  background-color: #c0392b;
+  color: #ebaea8;
+}
+/* line 28, ../sass/aw-flash.scss */
+.error .flash-close {
+  border-left: 2px solid #ebaea8;
+  cursor: pointer;
+}
+
+/* line 37, ../sass/aw-flash.scss */
+.help {
+  background-color: #2980b9;
+  color: #a0cdea;
+}
+/* line 28, ../sass/aw-flash.scss */
+.help .flash-close {
+  border-left: 2px solid #a0cdea;
+  cursor: pointer;
+}

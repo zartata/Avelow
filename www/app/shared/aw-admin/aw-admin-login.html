@@ -1,0 +1,28 @@
+<!-- AveLow / deco -->
+
+<header class="flex-container-h">
+    <div class="tiny-man mll w30"><img src="/assets/img/black-bike.png" alt="AveLow"></div>
+    <div class="tiny-man mrl w50 right flex-container-v">
+        <div class="flex-item-center w90 admin-txt">Admin Board</div>
+    </div>
+</header>
+
+<!-- Formulaire de connexion -->
+
+<section class="mtl pas">
+
+    <p class="admin-presentation w70 tiny-w100">L'Admin Board vous permet d'accèder à tout le contenu de votre base de données généré à la manière AveLow.</p>
+
+    <form name="loginForm"
+          ng-submit="loginForm.$valid && login()"
+          novalidate>
+
+
+        <div class="mtl center w40 tiny-w100 flex-container txtcenter">
+            <input class="admin-input" ng-model="password" type="password" title="password" id="password" placeholder="Mot de passe admin" required>
+            <input class="admin-input" type="submit" value="Connexion" />
+            <a href ng-click="dontShow()" ng-show="showHelp">Ne plus afficher l'aide.</a>
+        </div>
+    </form>
+
+</section>
