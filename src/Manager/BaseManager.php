@@ -337,7 +337,9 @@ class BaseManager
                     // Parametre pour récupérer toutes les entités liées aux id
                     $param = 'WHERE id IN (';
                     foreach ($ids as $id){
-                        $param = $param.' '.$id.',';
+                        if ($id != null){
+                            $param = $param.' '.$id.',';
+                        }
                     }
                     // On enlève la dernière virgule de trop dans la requete
                     $param = substr($param,0,-1);
