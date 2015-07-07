@@ -123,6 +123,7 @@
             logout: function(){
                 logF.currentUser = {};
                 $location.path('/');
+                $cookies.remove('user_infos');
             },
 
             isConnected: function(){
@@ -264,7 +265,7 @@
 
     // https://uncorkedstudios.com/blog/multipartformdata-file-upload-with-angularjs
     app.service('awfFileUpload', ['$http', 'awfUrl', '$q', 'awfFlash', function ($http, awfUrl, $q, awfFlash) {
-        this.uploadFileToUrl = function(file){
+        this.uploadFile = function(file){
             var deferred = $q.defer();
 
             var fd = new FormData();
