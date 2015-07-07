@@ -12,7 +12,7 @@ class '.$name.' extends BaseEntity
     // Fields
     // protected ...
 
-    // Constructeur qui initialise l\'user
+    // Constructeur
     public function __construct($donnees){
         parent::__construct($donnees);
     }
