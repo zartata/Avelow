@@ -14,7 +14,7 @@ do{
 if ($secondTime)
     echo $entityName.' est deja pris.
 ';
-echo 'Entrer le nom de l\'entite a generer (commence par un majuscule) : ';
+echo 'Entrez le nom de l\'entite a generer (commence par un majuscule) : ';
 $entityName = trim(fgets(STDIN));
 
 $secondTime = true;
@@ -23,7 +23,7 @@ while(in_array(strtolower($entityName), $entities));
 
 
 echo '
-Entrer le nombre de champs de l\'entite : ';
+Entrez le nombre de champs de l\'entite : ';
 $numberFields = trim(fgets(STDIN));
 
 

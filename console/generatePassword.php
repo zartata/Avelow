@@ -5,7 +5,7 @@ use src\GeneratePhp\GeneratePhp;
 
 echo '-------------------------------
 ';
-echo 'Entrer le mot de passe : ';
+echo 'Entrez le mot de passe : ';
 $password = trim(fgets(STDIN));
 
 echo 'Voici le mot de passe a mettre dans le fichier config (getSuperAdminPassword) :
