@@ -1,6 +1,6 @@
 {
     "name": "avelow/avelow",
-    "description": "Avelow, the API rest for AngularJs.",
+    "description": "Avelow, an API rest for AngularJs application.",
 
     "require": {
         "php": ">=5.4.0",
