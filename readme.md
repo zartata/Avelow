@@ -8,7 +8,7 @@ Le readme n'étant pas encore rédigé, voici la présentation du projet Avelow 
 
 > Je suis heureux de vous présenter la v1.0 d'Avelow.
 
-> ![Avelow, tout est plus simple](urlimg "Avelow, tout est plus simple")
+> ![Avelow, tout est plus simple](http://www.avelow.fr/assets/img/header-orange.png "Avelow, tout est plus simple")
 
 
 >Avelow est un framework 100% français permettant le développement rapide d'application web. Pour le back-end, il est développé en PHP et utilise Slim comme base pour le routing. Pour le front-end, AngularJs est utilisé pour simplifier la communication avec le back-end.
@@ -48,5 +48,5 @@ Le readme n'étant pas encore rédigé, voici la présentation du projet Avelow 
 
 > [Site officiel](http://www.avelow.fr) | [Github](http://www.github.com/Avelow/avelow)
 
-> ![La documentation, c'est cool](urlimg "La documentation, c'est cool")
-![Un mini-tp pour se faire la main](urlimg "Un mini-tp pour se faire la main")
+> ![La documentation, c'est cool](http://www.avelow.fr/assets/img/doc-preview.png "La documentation, c'est cool")
+![Un mini-tp pour se faire la main](http://www.avelow.fr/assets/img/minitp-preview.png "Un mini-tp pour se faire la main")
