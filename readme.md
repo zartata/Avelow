@@ -46,7 +46,7 @@ Le readme n'étant pas encore rédigé, voici la présentation du projet Avelow 
 
 > ## Le petit plus
 
-> [Facebook](http://www.facebook.com) | [Site officiel](http://www.avelow.fr) | [Github](http://www.github.com/Avelow/avelow)
+> [Site officiel](http://www.avelow.fr) | [Github](http://www.github.com/Avelow/avelow)
 
 > ![La documentation, c'est cool](urlimg "La documentation, c'est cool")
 ![Un mini-tp pour se faire la main](urlimg "Un mini-tp pour se faire la main")
