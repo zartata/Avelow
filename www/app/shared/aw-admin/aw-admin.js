@@ -55,13 +55,13 @@
         $scope.showHelp = true;
 
         $scope.login = function(){
-            awLogin.login('admin', $scope.password, '/board')
+            awLogin.login('admin', $scope.password, '/board');
         };
 
         $scope.dontShow = function(){
             $cookies.put('dontShow', true);
             $scope.showHelp = false;
-        }
+        };
 
         this.init = function(){
             var cookie = $cookies.get('dontShow');
@@ -86,7 +86,7 @@
 
         $scope.awTable = {};
 
-        $scope.selected = {table: {}, entity: {}}
+        $scope.selected = {table: {}, entity: {}};
 
         this.init = function(){
 

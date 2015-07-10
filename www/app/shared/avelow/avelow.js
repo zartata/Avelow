@@ -24,7 +24,7 @@
 
                 if (LoginFactory.isConnected()){
                     // On récupère l'url en fonction de l'user
-                    var urlToReturn = urlToReturn+'&user='+LoginFactory.currentUser.pseudo;
+                    urlToReturn = urlToReturn+'&user='+LoginFactory.currentUser.pseudo;
                     var hash = CryptoJS.enc.Hex.stringify(CryptoJS.HmacSHA256(LoginFactory.currentUser.pseudo, LoginFactory.currentUser.password));
                     var sign = CryptoJS.enc.Hex.stringify(CryptoJS.HmacSHA256(urlToReturn, hash));
                     urlToReturn = urlToReturn + '&signature='+sign;
@@ -52,12 +52,12 @@
                     }
                     else{
                         // Gestion des messages flash
-                        awFlash.add('error', data.error.message)
+                        awFlash.add('error', data.error.message);
                         deferred.reject(data.error);
                     }
                 }).error(function(){
                     var msg = 'Problème lors de l\'execution de la requete.';
-                    awFlash.add('error', msg)
+                    awFlash.add('error', msg);
                     deferred.reject(msg);
                 });
 
@@ -84,7 +84,7 @@
             // Return true if connected, false if not
             login: function(pseudo, pw, urlToRedirect, remember){
                 if (logF.isConnected()){
-                    awFlash.add('error', 'Un utilisateur est déjà connecté.')
+                    awFlash.add('error', 'Un utilisateur est déjà connecté.');
                     return false;
                 }else{
 
@@ -97,7 +97,7 @@
                         function(data){
                             logF.currentUser = data;
 
-                            if (!_.isUndefined(remember) && remember == true){
+                            if (!_.isUndefined(remember) && remember === true){
                                 $cookies.putObject('user_infos', {pseudo: pseudo, password: pw});
                             }
 
@@ -136,10 +136,10 @@
                 var urlToReturn = '/connection?tmp='+tmp;
 
                 // On récupère l'url en fonction de l'user
-                var urlToReturn = urlToReturn+'&user='+pseudo;
+                urlToReturn = urlToReturn+'&user='+pseudo;
                 var hash = CryptoJS.enc.Hex.stringify(CryptoJS.HmacSHA256(pseudo, CryptoJS.enc.Hex.stringify(CryptoJS.SHA256(pw))));
                 var sign = CryptoJS.enc.Hex.stringify(CryptoJS.HmacSHA256(urlToReturn, hash));
-                return urlToReturn = '/api'+urlToReturn + '&signature='+sign;
+                return '/api'+urlToReturn + '&signature='+sign;
             }
 
         };
@@ -281,7 +281,7 @@
                 }
                 else{
                     // Gestion des messages flash
-                    awfFlash.add('error', data.error.message)
+                    awfFlash.add('error', data.error.message);
                     deferred.reject(data.error);
                 }
             })
@@ -292,6 +292,6 @@
             });
 
             return deferred.promise;
-        }
+        };
     }]);
 })();
