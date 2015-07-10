@@ -287,7 +287,7 @@
             })
             .error(function(data){
                 var msg = 'Problème lors de l\'execution de la requete.';
-                awfFlash.add('error', msg)
+                awfFlash.add('error', msg);
                 deferred.reject(msg);
             });
 
