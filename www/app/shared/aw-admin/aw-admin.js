@@ -19,10 +19,6 @@
             templateUrl: '/app/shared/aw-admin/aw-admin-board.html',
             controller: 'awcBoard'
         })
-        .when('/add-doc', {
-            templateUrl: '/app/components/doc/addDoc.html',
-            controller: 'docCtrl'
-        })
         .otherwise({
             redirectTo: '/'
         });
