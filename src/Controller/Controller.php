@@ -162,7 +162,7 @@ class Controller{
 
         // On clone l'entité avant de la mettre à jour l'entité pour le before update
         $entityBeforeUpdate = clone $entity;
-        $entity->MaJEntity($dataURL);
+        $entity->MaJEntity($dataUrl);
 
         // On teste la duplication des champs en BDD    $isUpdate = true
         $listDupField = $config->getDuplicatedField($entity, true);
@@ -350,7 +350,7 @@ class Controller{
         }
 
         // On vérifie les champs non modifiable
-        if (!$config->verifyConstField($entity, $dataURL))
+        if (!$config->verifyConstField($entity, $dataUrl))
         {
             $response = new ErrorNotAllowed('Cette entité '.$config->ENTITY_NAME().' n\'est pas modifiable. (des champs constants ont été modifiés)');
             $response->render();
@@ -358,7 +358,7 @@ class Controller{
 
         // On clone l'entité avant de la mettre à jour l'entité pour le before update
         $entityBeforeUpdate = clone $entity;
-        $entity->MaJEntity($dataURL);
+        $entity->MaJEntity($dataUrl);
 
         // On teste la duplication des champs en BDD    $isUpdate = true
         $listDupField = $config->getDuplicatedField($entity, true);
