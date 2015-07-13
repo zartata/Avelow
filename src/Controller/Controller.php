@@ -65,26 +65,26 @@ class Controller{
                     $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png', 'pdf');
                     if (in_array($extension_upload, $extensions_autorisees))
                     {
-                            if ($extension_upload == 'pdf'){
-                                $type = 'pdf';
-                            }else{
-                                $type = 'image';
-                            }
-                            // On ajoute l'entity file
-                            $name = ''.time().'-'.$file['file']['size'];
+                        if ($extension_upload == 'pdf'){
+                            $type = 'pdf';
+                        }else{
+                            $type = 'image';
+                        }
+                        // On ajoute l'entity file
+                        $name = ''.time().'-'.$file['file']['size'].'-'.$file['file']['name'];
 
-                            $data = [
-                                'type' => $type,
-                                'url' => '/assets/img/uploads/'.$name.'.'.$extension_upload,
-                                'name' => $name,
-                                'extension' => $extension_upload,
-                                'size' => $file['file']['size'],
-                                'owner_id' => 1,
-                                'file' => $file
-                            ];
+                        $data = [
+                            'type' => $type,
+                            'url' => '/assets/img/uploads/'.$name,
+                            'name' => $name,
+                            'extension' => $extension_upload,
+                            'size' => $file['file']['size'],
+                            'owner_id' => 1,
+                            'file' => $file
+                        ];
 
-                            // On ajoute
-                            self::add($user, 'AwFile', $data);
+                        // On ajoute
+                        self::add($user, 'AwFile', $data);
                     }
                     $response = new ErrorFile("Extension non acceptée. (seulement jpg, jpeg, gif, png, pdf)");
                     $response->render();

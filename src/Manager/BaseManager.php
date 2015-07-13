@@ -263,19 +263,18 @@ class BaseManager
             $OneToManys = $this->config->ONE_TO_MANY();
             // On créé deux listes de getters et setetrs pour One To Many
             $otmGetSets = array();
-            $i = 0;
+            $j = 0;
             foreach($OneToManys as $OneToMany){
                 // On stocke le getter, le setter et la classe
-                $otmGetSets[$i]['getter'] = 'get'.ucfirst($OneToMany[0].'_'.$OneToMany[1]);
-                $otmGetSets[$i]['setter'] = 'set'.ucfirst($OneToMany[0]);
-                $otmGetSets[$i]['classe'] = $OneToMany[2];
+                $otmGetSets[$j]['getter'] = 'get'.ucfirst($OneToMany[0].'_'.$OneToMany[1]);
+                $otmGetSets[$j]['setter'] = 'set'.ucfirst($OneToMany[0]);
+                $otmGetSets[$j]['classe'] = $OneToMany[2];
                 $i++;
             }
 
             // On récup le contenu de MANY_TO_ONE
             $ManyToOnes = $this->config->MANY_TO_ONE();
             // Fonctionne comme le one to one, donc on l'ajoute dans la même liste pour gagner du temps
-            $i = 0;
             foreach($ManyToOnes as $ManyToOne){
                 // On stocke le getter, le setter et la classe
                 $otoGetSets[$i]['getter'] = 'get'.ucfirst($ManyToOne[0].'_'.$ManyToOne[1]);
@@ -288,12 +287,11 @@ class BaseManager
             // Fonctionne comme le one to many
             $ManyToManys = $this->config->MANY_TO_MANY();
             // On créé deux listes de getters et setetrs pour One To Many
-            $i = 0;
             foreach($ManyToManys as $ManyToMany){
                 // On stocke le getter, le setter et la classe
-                $otmGetSets[$i]['getter'] = 'get'.ucfirst($ManyToMany[0].'_'.$ManyToMany[1]);
-                $otmGetSets[$i]['setter'] = 'set'.ucfirst($ManyToMany[0]);
-                $otmGetSets[$i]['classe'] = $ManyToMany[2];
+                $otmGetSets[$j]['getter'] = 'get'.ucfirst($ManyToMany[0].'_'.$ManyToMany[1]);
+                $otmGetSets[$j]['setter'] = 'set'.ucfirst($ManyToMany[0]);
+                $otmGetSets[$j]['classe'] = $ManyToMany[2];
                 $i++;
             }
 

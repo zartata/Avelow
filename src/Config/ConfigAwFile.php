@@ -122,7 +122,7 @@ class ConfigAwFile extends ConfigBaseEntity{
     public function verifyConditionsToGet($entity, $user){ return true; }
 
     public function beforeAdd($entity, $moreData){
-        move_uploaded_file($moreData['file']['file']['tmp_name'], '../../www/assets/img/uploads/' . basename($moreData['name'].'.'.$moreData['extension']));
+        move_uploaded_file($moreData['file']['file']['tmp_name'], '../../www'.$moreData['url']);
     }
     public function afterAdd($entity, $moreData){
         parent::afterAdd($entity, $moreData);
