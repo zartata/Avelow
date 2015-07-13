@@ -156,7 +156,7 @@ class BaseManager
         }
         // On récupère l'entité et on la retourne
         $liste = $this->getWithParam($param, $withJoin, $withJoinLevel, $withCritic);
-        return $liste[0];
+        return count($liste)>0?$liste[0]:null;
     }
 
     public function getWithoutParam(){
@@ -333,7 +333,7 @@ class BaseManager
                     $managers[$classe] = new BaseManager($this->db, $classe);
 
                     // Parametre pour récupérer toutes les entités liées aux id
-                    $param = 'WHERE id IN (';
+                    $param = 'WHERE deleted = 0 id IN (';
                     foreach ($ids as $id){
                         if ($id != null){
                             $param = $param.' '.$id.',';

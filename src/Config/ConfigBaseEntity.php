@@ -257,7 +257,7 @@ abstract class ConfigBaseEntity{
         $fields = array();
 
         foreach ($this->fields as $f){
-            if (!$f->isNull() && $f->getDefault() != null && !$f->isAlreadyManaged())
+            if (!$f->isNull() && $f->getDefault() !== null && !$f->isAlreadyManaged())
                 $fields[$f->getName()] = $f->getDefault();
         }
 
@@ -270,7 +270,7 @@ abstract class ConfigBaseEntity{
         $fields = array();
 
         foreach ($this->fields as $f){
-            if (!$f->isNull() && $f->getDefault() != null && !$f->isAlreadyManaged())
+            if (!$f->isNull() && $f->getDefault() !== null && !$f->isAlreadyManaged())
                 $fields[] = $f->getName();
         }
 
@@ -377,13 +377,13 @@ abstract class ConfigBaseEntity{
 
         // Si le role est dans la liste de roles possible, on renvoie vrai et on autorise
         if ($able_action == 'ABLE_TO_GET')
-            return in_array($this->ABLE_TO_GET(), $user->getRoles());
+            return $user->isGranted($this->ABLE_TO_GET());
         if ($able_action == 'ABLE_TO_ADD')
-            return in_array($this->ABLE_TO_ADD(), $user->getRoles());
+            return $user->isGranted($this->ABLE_TO_ADD());
         if ($able_action == 'ABLE_TO_UPDATE')
-            return in_array($this->ABLE_TO_UPDATE(), $user->getRoles());
+            return $user->isGranted($this->ABLE_TO_UPDATE());
         if ($able_action == 'ABLE_TO_DELETE')
-            return in_array($this->ABLE_TO_DELETE(), $user->getRoles());
+            return $user->isGranted($this->ABLE_TO_DELETE());
     }
 
     // Fonction qui renvoie les champs dont la valeur est déjà présente en BDD et dont cela pose problème : les champs "dupliqué"
