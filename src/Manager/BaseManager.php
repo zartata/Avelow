@@ -385,7 +385,7 @@ class BaseManager
                     // On récup les entités ayant ces id précisement dans la liste
                     $entitySetter = array();
                     foreach ($listeRelative[$otmGetSet['classe']] as $entForSetter){
-                        if (in_array($entForSetter->getId(), $ids))
+                        if ($ids !== null && in_array($entForSetter->getId(), $ids))
                             $entitySetter[] = $entForSetter;
                     }
                     if (count($entitySetter) > 0){
