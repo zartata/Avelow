@@ -246,22 +246,16 @@
         };
     });
 
-    // https://uncorkedstudios.com/blog/multipartformdata-file-upload-with-angularjs
     app.directive('awdFileModel', ['$parse', function ($parse) {
-        return {
-            restrict: 'A',
-            link: function(scope, element, attrs) {
-                var model = $parse(attrs.awdFileModel);
-                var modelSetter = model.assign;
-
-                element.bind('change', function(){
-                    scope.$apply(function(){
-                        modelSetter(scope, element[0].files);
-                    });
+        return function( scope, elm, attrs ) {
+            elm.bind('change', function( evt ) {
+                scope.$apply(function() {
+                    scope[ attrs.name ] = evt.target.files;
                 });
-            }
+            });
         };
     }]);
+
 
     // https://uncorkedstudios.com/blog/multipartformdata-file-upload-with-angularjs
     app.service('awfFileUpload', ['$http', 'awfUrl', '$q', 'awfFlash', function ($http, awfUrl, $q, awfFlash) {
