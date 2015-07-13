@@ -365,13 +365,14 @@ class BaseManager
                     $id = $entity->$otoGetSet['getter']();
 
                     // On récup les entités ayant ces id précisement dans la liste
-                    $entitySetter;
+                    $entitySetter = null;
                     foreach ($listeRelative[$otoGetSet['classe']] as $entForSetter){
                         if ($entForSetter->getId() == $id)
                             $entitySetter = $entForSetter;
                     }
-
-                    $entity->$otoGetSet['setter']($entitySetter);
+                    if ($entitySetter != null){
+                        $entity->$otoGetSet['setter']($entitySetter);
+                    }
                 }
 
 
@@ -387,8 +388,9 @@ class BaseManager
                         if (in_array($entForSetter->getId(), $ids))
                             $entitySetter[] = $entForSetter;
                     }
-
-                    $entity->$otmGetSet['setter']($entitySetter);
+                    if (count($entitySetter) > 0){
+                        $entity->$otmGetSet['setter']($entitySetter);
+                    }
                 }
 
             }
