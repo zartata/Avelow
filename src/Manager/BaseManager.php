@@ -330,7 +330,7 @@ class BaseManager
             $listeRelative = array();
             foreach ($toGet as $classe => $ids){
                 $listeRelative[$classe] = [];
-                if (!empty($ids))
+                if (!empty($ids) && $ids[0] != null)
                 {
                     $managers[$classe] = new BaseManager($this->db, $classe);
 
