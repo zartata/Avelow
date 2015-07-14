@@ -4,6 +4,7 @@ namespace src\Security;
 use src\Manager\BaseManager;
 use src\Bdd\ConnexionPDO as coPDO;
 use src\Config\Config;
+use src\Output\JsonOutput;
 
 class SecurityRequest
 {

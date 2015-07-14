@@ -63,7 +63,7 @@ class Controller{
                     $infosfichier = pathinfo($file['file']['name']);
                     $extension_upload = $infosfichier['extension'];
                     $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png', 'pdf');
-                    if (in_array($extension_upload, $extensions_autorisees))
+                    if (in_array(strtolower($extension_upload), $extensions_autorisees))
                     {
                         if ($extension_upload == 'pdf'){
                             $type = 'pdf';
